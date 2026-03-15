@@ -3,87 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rh for Design | Luxury Portfolio</title>
+    <title>Rh for Design | Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;600&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;600&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { --gold: #c5a059; --dark: #000000; }
         body { background-color: #fcfcfc; font-family: 'Cairo', sans-serif; margin: 0; overflow-x: hidden; }
-        
-        /* بانر انسيابي فاخر */
-        .luxury-hero {
-            background: #000;
-            background-image: radial-gradient(circle at top right, #1a1a1a, #000);
-            padding: 150px 0;
-            text-align: center;
-            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
-            position: relative;
-        }
-
-        /* دخول شيك وانسيابي للعنوان */
-        .brand-name {
-            font-family: 'Playfair Display', serif;
-            font-size: calc(3rem + 4vw);
-            color: #fff;
-            margin: 0;
-            letter-spacing: -1px;
-            opacity: 0;
-            filter: blur(10px);
-            animation: elegantReveal 1.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-        }
-
-        .gold-word { color: var(--gold); font-style: italic; font-weight: 300; }
-
-        .subtitle {
-            font-family: 'Montserrat', sans-serif;
-            color: rgba(255,255,255,0.6);
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            margin-top: 20px;
-            opacity: 0;
-            animation: fadeIn 2.5s ease-out 0.5s forwards;
-        }
-
-        /* حركة المربعات (الكروت) */
-        .card {
-            border: none;
-            border-radius: 0px; /* زوايا حادة للفخامة */
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-            height: 100%;
-            background: #fff;
-            overflow: hidden;
-        }
-        .card:hover { 
-            transform: translateY(-10px); 
-            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
-        }
-        .card-img-top { height: 240px; object-fit: cover; background: #111; transition: 0.6s; }
+        .luxury-hero { background: #000; padding: 120px 0; text-align: center; border-bottom: 1px solid rgba(197, 160, 89, 0.3); }
+        .brand-name { font-family: 'Playfair Display', serif; font-size: calc(3rem + 4vw); color: #fff; opacity: 0; filter: blur(10px); animation: elegantReveal 1.8s ease-out forwards; }
+        .gold-word { color: var(--gold); font-style: italic; }
+        .subtitle { font-family: 'Montserrat', sans-serif; color: rgba(255,255,255,0.6); letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem; margin-top: 20px; opacity: 0; animation: fadeIn 2s forwards 0.5s; }
+        .card { border: none; border-radius: 0px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: all 0.5s ease; height: 100%; background: #fff; overflow: hidden; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.12); }
+        .card-img-top { height: 240px; object-fit: cover; transition: 0.6s; }
         .card:hover .card-img-top { transform: scale(1.05); }
-        
-        .btn-gold {
-            background: transparent;
-            color: var(--dark);
-            border: 1px solid var(--dark);
-            border-radius: 0;
-            padding: 10px 20px;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            font-weight: 600;
-            transition: 0.4s;
-            text-decoration: none;
-        }
+        .btn-gold { background: transparent; color: var(--dark); border: 1px solid var(--dark); border-radius: 0; padding: 10px 20px; font-size: 0.8rem; letter-spacing: 2px; font-weight: 600; text-decoration: none; }
         .btn-gold:hover { background: var(--dark); color: #fff; }
-
-        /* الأنيميشن الاحترافي */
-        @keyframes elegantReveal {
-            0% { opacity: 0; filter: blur(15px); transform: translateY(20px); }
-            100% { opacity: 1; filter: blur(0); transform: translateY(0); }
-        }
+        @keyframes elegantReveal { 0% { opacity: 0; filter: blur(15px); transform: translateY(20px); } 100% { opacity: 1; filter: blur(0); transform: translateY(0); } }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; }
     </style>
 </head>
 <body>
@@ -96,33 +34,93 @@
 <div class="container my-5">
     <div class="row g-5">
         
-        <script>
-            const stores = [
-                {n: "apexluxcare", d: "متجر معجون اسنان صحى", l: "https://apexluxcare.com/"},
-                {n: "twinaro", d: "متجر ملابس", l: "https://twinaro.com/"},
-                {n: "glowyshop", d: "متجر حقائب", l: "https://glowyshop.myeasyorders.com/#"},
-                {n: "livoraa", d: "متجر متعدد", l: "https://livoraa.myeasyorders.com/"},
-                {n: "forsety", d: "متجر متعدد", l: "https://forsety.myeasyorders.com/"},
-                {n: "d-nine", d: "متجر احذية رياضية", l: "https://d-nine.myeasyorders.com/"},
-                {n: "gomaa-store", d: "متجر متعدد", l: "https://gomaa-store.myeasyorders.com/"},
-                {n: "drrei-agri", d: "متجر منتجات زراعية", l: "https://www.drrei-agri.com/"}
-            ];
+        <div class="col-md-4">
+            <div class="card text-center">
+                <img src="shop1.jpg" class="card-img-top" alt="apexluxcare">
+                <div class="card-body py-4">
+                    <h6 class="fw-bold">APEXLUXCARE</h6>
+                    <p class="text-muted small mb-4">متجر معجون اسنان صحى</p>
+                    <a href="https://apexluxcare.com/" target="_blank" class="btn btn-gold">VIEW PROJECT</a>
+                </div>
+            </div>
+        </div>
 
-            stores.forEach(s => {
-                document.write(`
-                    <div class="col-md-4">
-                        <div class="card text-center">
-                            <img src="https://via.placeholder.com/400x300/111/c5a059?text=${s.n}" class="card-img-top">
-                            <div class="card-body py-4">
-                                <h6 class="fw-bold" style="letter-spacing:1px">${s.n.toUpperCase()}</h6>
-                                <p class="text-muted small mb-4">${s.d}</p>
-                                <a href="${s.l}" target="_blank" class="btn btn-gold">VIEW PROJECT</a>
-                            </div>
-                        </div>
-                    </div>
-                `);
-            });
-        </script>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <img src="shop2.jpg" class="card-img-top" alt="twinaro">
+                <div class="card-body py-4">
+                    <h6 class="fw-bold">TWINARO</h6>
+                    <p class="text-muted small mb-4">متجر ملابس</p>
+                    <a href="https://twinaro.com/" target="_blank" class="btn btn-gold">VIEW PROJECT</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-center">
+                <img src="shop3.jpg" class="card-img-top" alt="glowyshop">
+                <div class="card-body py-4">
+                    <h6 class="fw-bold">GLOWYSHOP</h6>
+                    <p class="text-muted small mb-4">متجر حقائب</p>
+                    <a href="https://glowyshop.myeasyorders.com/#" target="_blank" class="btn btn-gold">VIEW PROJECT</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-center">
+                <img src="shop4.jpg" class="card-img-top" alt="livoraa">
+                <div class="card-body py-4">
+                    <h6 class="fw-bold">LIVORAA</h6>
+                    <p class="text-muted small mb-4">متجر متعدد</p>
+                    <a href="https://livoraa.myeasyorders.com/" target="_blank" class="btn btn-gold">VIEW PROJECT</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-center">
+                <img src="shop5.jpg" class="card-img-top" alt="forsety">
+                <div class="card-body py-4">
+                    <h6 class="fw-bold">FORSETY</h6>
+                    <p class="text-muted small mb-4">متجر متعدد</p>
+                    <a href="https://forsety.myeasyorders.com/" target="_blank" class="btn btn-gold">VIEW PROJECT</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-center">
+                <img src="shop6.jpg" class="card-img-top" alt="d-nine">
+                <div class="card-body py-4">
+                    <h6 class="fw-bold">D-NINE</h6>
+                    <p class="text-muted small mb-4">متجر احذية رياضية</p>
+                    <a href="https://d-nine.myeasyorders.com/" target="_blank" class="btn btn-gold">VIEW PROJECT</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-center">
+                <img src="shop7.jpg" class="card-img-top" alt="gomaa-store">
+                <div class="card-body py-4">
+                    <h6 class="fw-bold">GOMAA-STORE</h6>
+                    <p class="text-muted small mb-4">متجر متعدد</p>
+                    <a href="https://gomaa-store.myeasyorders.com/" target="_blank" class="btn btn-gold">VIEW PROJECT</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-center">
+                <img src="shop8.jpg" class="card-img-top" alt="drrei-agri">
+                <div class="card-body py-4">
+                    <h6 class="fw-bold">DRREI-AGRI</h6>
+                    <p class="text-muted small mb-4">متجر منتجات زراعية</p>
+                    <a href="https://www.drrei-agri.com/" target="_blank" class="btn btn-gold">VIEW PROJECT</a>
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>
