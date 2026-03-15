@@ -15,9 +15,9 @@
         .subtitle { font-family: 'Montserrat', sans-serif; color: rgba(255,255,255,0.6); letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem; margin-top: 20px; opacity: 0; animation: fadeIn 2s forwards 0.5s; }
         .card { border: none; border-radius: 0px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: all 0.5s ease; height: 100%; background: #fff; overflow: hidden; }
         .card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.12); }
-        .card-img-top { height: 240px; object-fit: cover; transition: 0.6s; }
+        .card-img-top { height: 240px; width: 100%; object-fit: cover; transition: 0.6s; display: block; }
         .card:hover .card-img-top { transform: scale(1.05); }
-        .btn-gold { background: transparent; color: var(--dark); border: 1px solid var(--dark); border-radius: 0; padding: 10px 20px; font-size: 0.8rem; letter-spacing: 2px; font-weight: 600; text-decoration: none; }
+        .btn-gold { background: transparent; color: var(--dark); border: 1px solid var(--dark); border-radius: 0; padding: 10px 20px; font-size: 0.8rem; letter-spacing: 2px; font-weight: 600; text-decoration: none; display: inline-block; }
         .btn-gold:hover { background: var(--dark); color: #fff; }
         @keyframes elegantReveal { 0% { opacity: 0; filter: blur(15px); transform: translateY(20px); } 100% { opacity: 1; filter: blur(0); transform: translateY(0); } }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -33,10 +33,9 @@
 
 <div class="container my-5">
     <div class="row g-5">
-        
         <div class="col-md-4">
             <div class="card text-center">
-                <img src="shop1.JPG" class="card-img-top" alt="apexluxcare">
+                <img src="./shop1.jpg" class="card-img-top" alt="shop1">
                 <div class="card-body py-4">
                     <h6 class="fw-bold">APEXLUXCARE</h6>
                     <p class="text-muted small mb-4">متجر معجون اسنان صحى</p>
@@ -44,10 +43,9 @@
                 </div>
             </div>
         </div>
-
         <div class="col-md-4">
             <div class="card text-center">
-                <img src="shop2.JPG" class="card-img-top" alt="twinaro">
+                <img src="./shop2.jpg" class="card-img-top" alt="shop2">
                 <div class="card-body py-4">
                     <h6 class="fw-bold">TWINARO</h6>
                     <p class="text-muted small mb-4">متجر ملابس</p>
@@ -55,10 +53,9 @@
                 </div>
             </div>
         </div>
-
         <div class="col-md-4">
             <div class="card text-center">
-                <img src="shop3.JPG" class="card-img-top" alt="glowyshop">
+                <img src="./shop3.jpg" class="card-img-top" alt="shop3">
                 <div class="card-body py-4">
                     <h6 class="fw-bold">GLOWYSHOP</h6>
                     <p class="text-muted small mb-4">متجر حقائب</p>
@@ -66,10 +63,9 @@
                 </div>
             </div>
         </div>
-
         <div class="col-md-4">
             <div class="card text-center">
-                <img src="shop4.JPG" class="card-img-top" alt="livoraa">
+                <img src="./shop4.jpg" class="card-img-top" alt="shop4">
                 <div class="card-body py-4">
                     <h6 class="fw-bold">LIVORAA</h6>
                     <p class="text-muted small mb-4">متجر متعدد</p>
@@ -77,10 +73,9 @@
                 </div>
             </div>
         </div>
-
         <div class="col-md-4">
             <div class="card text-center">
-                <img src="shop5.JPG" class="card-img-top" alt="forsety">
+                <img src="./shop5.jpg" class="card-img-top" alt="shop5">
                 <div class="card-body py-4">
                     <h6 class="fw-bold">FORSETY</h6>
                     <p class="text-muted small mb-4">متجر متعدد</p>
@@ -88,10 +83,9 @@
                 </div>
             </div>
         </div>
-
         <div class="col-md-4">
             <div class="card text-center">
-                <img src="shop6.JPG" class="card-img-top" alt="d-nine">
+                <img src="./shop6.jpg" class="card-img-top" alt="shop6">
                 <div class="card-body py-4">
                     <h6 class="fw-bold">D-NINE</h6>
                     <p class="text-muted small mb-4">متجر احذية رياضية</p>
@@ -99,10 +93,9 @@
                 </div>
             </div>
         </div>
-
         <div class="col-md-4">
             <div class="card text-center">
-                <img src="shop7.JPG" class="card-img-top" alt="gomaa-store">
+                <img src="./shop7.jpg" class="card-img-top" alt="shop7">
                 <div class="card-body py-4">
                     <h6 class="fw-bold">GOMAA-STORE</h6>
                     <p class="text-muted small mb-4">متجر متعدد</p>
@@ -110,10 +103,9 @@
                 </div>
             </div>
         </div>
-
         <div class="col-md-4">
             <div class="card text-center">
-                <img src="shop8.JPG" class="card-img-top" alt="drrei-agri">
+                <img src="./shop8.jpg" class="card-img-top" alt="shop8">
                 <div class="card-body py-4">
                     <h6 class="fw-bold">DRREI-AGRI</h6>
                     <p class="text-muted small mb-4">متجر منتجات زراعية</p>
@@ -121,7 +113,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
