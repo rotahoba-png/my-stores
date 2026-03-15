@@ -1,82 +1,139 @@
-<div class="row g-5">
-    <div class="col-md-4">
-        <div class="card text-center">
-            <img src="shop1.jpg.jpg" class="card-img-top" alt="shop1">
-            <div class="card-body py-4">
-                <h6 class="fw-bold">APEXLUXCARE</h6>
-                <p class="text-muted small mb-4">متجر معجون اسنان صحى</p>
-                <a href="https://apexluxcare.com/" target="_blank" class="btn btn-gold">VIEW PROJECT</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card text-center">
-            <img src="shop2.jpg.jpg" class="card-img-top" alt="shop2">
-            <div class="card-body py-4">
-                <h6 class="fw-bold">TWINARO</h6>
-                <p class="text-muted small mb-4">متجر ملابس</p>
-                <a href="https://twinaro.com/" target="_blank" class="btn btn-gold">VIEW PROJECT</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card text-center">
-            <img src="shop3.jpg.jpg" class="card-img-top" alt="shop3">
-            <div class="card-body py-4">
-                <h6 class="fw-bold">GLOWYSHOP</h6>
-                <p class="text-muted small mb-4">متجر حقائب</p>
-                <a href="https://glowyshop.myeasyorders.com/#" target="_blank" class="btn btn-gold">VIEW PROJECT</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card text-center">
-            <img src="shop4.jpg.jpg" class="card-img-top" alt="shop4">
-            <div class="card-body py-4">
-                <h6 class="fw-bold">LIVORAA</h6>
-                <p class="text-muted small mb-4">متجر متعدد</p>
-                <a href="https://livoraa.myeasyorders.com/" target="_blank" class="btn btn-gold">VIEW PROJECT</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card text-center">
-            <img src="shop5.jpg.jpg" class="card-img-top" alt="shop5">
-            <div class="card-body py-4">
-                <h6 class="fw-bold">FORSETY</h6>
-                <p class="text-muted small mb-4">متجر متعدد</p>
-                <a href="https://forsety.myeasyorders.com/" target="_blank" class="btn btn-gold">VIEW PROJECT</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card text-center">
-            <img src="shop6.jpg.jpg" class="card-img-top" alt="shop6">
-            <div class="card-body py-4">
-                <h6 class="fw-bold">D-NINE</h6>
-                <p class="text-muted small mb-4">متجر احذية رياضية</p>
-                <a href="https://d-nine.myeasyorders.com/" target="_blank" class="btn btn-gold">VIEW PROJECT</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card text-center">
-            <img src="shop7.jpg.jpg" class="card-img-top" alt="shop7">
-            <div class="card-body py-4">
-                <h6 class="fw-bold">GOMAA-STORE</h6>
-                <p class="text-muted small mb-4">متجر متعدد</p>
-                <a href="https://gomaa-store.myeasyorders.com/" target="_blank" class="btn btn-gold">VIEW PROJECT</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card text-center">
-            <img src="shop8.jpg.jpg" class="card-img-top" alt="shop8">
-            <div class="card-body py-4">
-                <h6 class="fw-bold">DRREI-AGRI</h6>
-                <p class="text-muted small mb-4">متجر منتجات زراعية</p>
-                <a href="https://www.drrei-agri.com/" target="_blank" class="btn btn-gold">VIEW PROJECT</a>
-            </div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rh for Design | Luxury Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;600&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #c5a059; --dark: #000000; }
+        body { background-color: #fcfcfc; font-family: 'Cairo', sans-serif; margin: 0; overflow-x: hidden; }
+        
+        /* البانر العلوي */
+        .luxury-hero {
+            background: #000;
+            background-image: radial-gradient(circle at top right, #1a1a1a, #000);
+            padding: 120px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: calc(2.5rem + 4vw);
+            color: #fff;
+            margin: 0;
+            opacity: 0;
+            filter: blur(10px);
+            animation: elegantReveal 1.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        }
+
+        .gold-word { color: var(--gold); font-style: italic; font-weight: 300; }
+        .subtitle { font-family: 'Montserrat', sans-serif; color: rgba(255,255,255,0.6); letter-spacing: 5px; text-transform: uppercase; font-size: 0.8rem; margin-top: 20px; opacity: 0; animation: fadeIn 2.5s forwards 0.5s; }
+
+        /* تنسيق الصور والكروت الموحد */
+        .card {
+            border: none;
+            border-radius: 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            height: 100%;
+            background: #fff;
+        }
+
+        .card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        }
+
+        /* الجزء المسؤول عن توحيد مقاس الصور */
+        .img-container {
+            width: 100%;
+            height: 250px; /* طول موحد لجميع المربعات */
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* لضمان ملء المساحة بدون مط الصورة */
+            object-position: top; /* التركيز على الجزء العلوي من صورة المتجر */
+            transition: transform 0.8s ease;
+        }
+
+        .card:hover .card-img-top { transform: scale(1.1); }
+
+        .btn-gold {
+            background: transparent;
+            color: var(--dark);
+            border: 1px solid var(--dark);
+            border-radius: 0;
+            padding: 10px 25px;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .btn-gold:hover { background: var(--dark); color: #fff; }
+
+        @keyframes elegantReveal {
+            0% { opacity: 0; filter: blur(15px); transform: translateY(20px); }
+            100% { opacity: 1; filter: blur(0); transform: translateY(0); }
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+
+<div class="luxury-hero">
+    <h1 class="brand-name">Rh <span class="gold-word">for</span> Design</h1>
+    <p class="subtitle">Bespoke Digital Experiences</p>
+</div>
+
+<div class="container my-5">
+    <div class="row g-5">
+        
+        <script>
+            const stores = [
+                {n: "APEXLUXCARE", d: "متجر معجون اسنان صحى", l: "https://apexluxcare.com/", img: "shop1.jpg.jpg"},
+                {n: "TWINARO", d: "متجر ملابس", l: "https://twinaro.com/", img: "shop2.jpg.jpg"},
+                {n: "GLOWYSHOP", d: "متجر حقائب", l: "https://glowyshop.myeasyorders.com/#", img: "shop3.jpg.jpg"},
+                {n: "LIVORAA", d: "متجر متعدد", l: "https://livoraa.myeasyorders.com/", img: "shop4.jpg.jpg"},
+                {n: "FORSETY", d: "متجر متعدد", l: "https://forsety.myeasyorders.com/", img: "shop5.jpg.jpg"},
+                {n: "D-NINE", d: "متجر احذية رياضية", l: "https://d-nine.myeasyorders.com/", img: "shop6.jpg.jpg"},
+                {n: "GOMAA-STORE", d: "متجر متعدد", l: "https://gomaa-store.myeasyorders.com/", img: "shop7.jpg.jpg"},
+                {n: "DRREI-AGRI", d: "متجر منتجات زراعية", l: "https://www.drrei-agri.com/", img: "shop8.jpg.jpg"}
+            ];
+
+            stores.forEach(s => {
+                document.write(`
+                    <div class="col-md-4">
+                        <div class="card text-center">
+                            <div class="img-container">
+                                <img src="${s.img}" class="card-img-top" alt="${s.n}">
+                            </div>
+                            <div class="card-body py-4">
+                                <h6 class="fw-bold mb-2" style="letter-spacing:1px">${s.n}</h6>
+                                <p class="text-muted small mb-4">${s.d}</p>
+                                <a href="${s.l}" target="_blank" class="btn btn-gold">VIEW PROJECT</a>
+                            </div>
+                        </div>
+                    </div>
+                `);
+            });
+        </script>
+
     </div>
 </div>
+
+<a href="https://wa.me/201005319339" class="whatsapp-btn" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="30">
+</a>
+
+</body>
+</html>
