@@ -1,170 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rh for Design | Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body { background-color: #f8f9fa; font-family: 'Cairo', sans-serif; }
-        
-        /* البانر الأسود الفخم */
-        .hero-section {
-            background-color: #000000;
-            padding: 100px 0;
-            text-align: center;
-            border-bottom: 8px solid #1a1a1a;
-            margin-bottom: 60px;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rh for Design | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; font-family: 'Cairo', sans-serif; padding-bottom: 50px; }
+        
+        /* ========================================= */
+        /* البانر الاحترافي الفخم مع حركة السحب الداكنة */
+        /* ========================================= */
+        .hero-section {
+            position: relative; /* مهم لترتيب العناصر فوق الخلفية */
+            padding: 120px 0; /* زدت المساحة للفخامة */
+            text-align: center;
+            border-bottom: 8px solid #1a1a1a;
+            margin-bottom: 60px;
+            overflow: hidden; /* لإخفاء السحب الخارجة عن الإطار */
+            background-color: #000; /* لون احتياطي */
+        }
 
-        /* الاسم 3D باللون الأبيض */
-        .brand-3d {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 4.5rem;
-            color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin: 0;
-            text-shadow: 
-                0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 
-                0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 
-                0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 
-                0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
-        }
+        /* طبقة الخلفية المتحركة (Animated Gradient Mesh) */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, #000000 0%, #000a1a 25%, #001f3f 50%, #000a1a 75%, #000000 100%);
+            background-size: 400% 400%; /* مهم لجعل التدرج يتحرك */
+            animation: subtleGradient 25s ease infinite; /* حركة بطيئة جداً للفخامة */
+            z-index: 1; /* خلف النص */
+        }
 
-        .hero-section p { color: #888; font-size: 1.2rem; margin-top: 15px; }
+        /* تعريف حركة السحب (Gradient Animation) */
+        @keyframes subtleGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-        /* الكروت والظلال */
-        .card {
-            border: none;
-            border-radius: 25px;
-            box-shadow: 0 15px 45px rgba(0,0,0,0.15); /* ظلال واضحة */
-            transition: 0.4s ease;
-            height: 100%;
-            overflow: hidden;
-            background: #fff;
-        }
-        .card:hover { transform: translateY(-15px); box-shadow: 0 25px 60px rgba(0,0,0,0.25); }
-        .card-img-top { height: 200px; object-fit: cover; background-color: #f0f0f0; border-bottom: 1px solid #eee; }
-        
-        /* الأزرار */
-        .btn-visit { 
-            background: #000; 
-            color: #fff; 
-            border-radius: 50px; 
-            padding: 10px 25px; 
-            font-weight: bold; 
-            border: 2px solid #000;
-            transition: 0.3s;
-        }
-        .btn-visit:hover { background: transparent; color: #000; }
+        /* النص فوق الخلفية المتحركة */
+        .hero-content {
+            position: relative;
+            z-index: 2; /* فوق الخلفية المتحركة */
+        }
 
-        .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.3); z-index: 1000; }
-    </style>
+        /* الاسم 3D باللون الأبيض مع حركة ظهور ناعمة */
+        .brand-3d {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 5rem; /* زدت الحجم قليلاً */
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin: 0;
+            text-shadow: 
+                0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 
+                0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 
+                0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 
+                0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+            opacity: 0; /* مخفي في البداية */
+            animation: textReveal 1.5s ease-out forwards; /* حركة ظهور الحروف */
+        }
+
+        /* تعريف حركة ظهور النص */
+        @keyframes textReveal {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-section p { color: #888; font-size: 1.2rem; margin-top: 15px; }
+
+        /* ========================================= */
+        /* الكروت والظلال (لم يتم تغييرها تماماً) */
+        /* ========================================= */
+        .card {
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.15); /* ظلال واضحة */
+            transition: 0.4s ease;
+            height: 100%;
+            overflow: hidden;
+            background: #fff;
+        }
+        .card:hover { transform: translateY(-15px); box-shadow: 0 25px 60px rgba(0,0,0,0.25); }
+        .card-img-top { height: 200px; object-fit: cover; background-color: #f0f0f0; border-bottom: 1px solid #eee; }
+        
+        /* الأزرار (لم يتم تغييرها) */
+        .btn-visit { 
+            background: #000; 
+            color: #fff; 
+            border-radius: 50px; 
+            padding: 10px 25px; 
+            font-weight: bold; 
+            border: 2px solid #000;
+            transition: 0.3s;
+        }
+        .btn-visit:hover { background: transparent; color: #000; }
+
+        .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.3); z-index: 1000; }
+    </style>
 </head>
 <body>
 
 <div class="hero-section">
-    <h1 class="brand-3d">Rh for Design</h1>
-    <p>Innovative Web Solutions & Creative Store Designs</p>
+    <div class="hero-content">         <h1 class="brand-3d">Rh for Design</h1>
+        <p>Innovative Web Solutions & Creative Store Designs</p>
+    </div>
 </div>
 
 <div class="container mb-5">
-    <div class="row g-5"> <div class="col-md-4">
-            <div class="card text-center">
-                <img src="https://via.placeholder.com/400x250?text=apexluxcare" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="fw-bold">apexluxcare</h5>
-                    <p class="text-muted small">متجر معجون اسنان صحى</p>
-                    <a href="https://apexluxcare.com/" target="_blank" class="btn btn-visit">Visit Store</a>
-                </div>
-            </div>
-        </div>
+    <div class="row g-5">         
+                <div class="col-md-4">
+            <div class="card text-center">
+                <img src="https://via.placeholder.com/400x250?text=apexluxcare" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="fw-bold">apexluxcare</h5>
+                    <p class="text-muted small">متجر معجون اسنان صحى</p>
+                    <a href="https://apexluxcare.com/" target="_blank" class="btn btn-visit">Visit Store</a>
+                </div>
+            </div>
+        </div>
 
-        <div class="col-md-4">
-            <div class="card text-center">
-                <img src="https://via.placeholder.com/400x250?text=twinaro" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="fw-bold">twinaro</h5>
-                    <p class="text-muted small">متجر ملابس</p>
-                    <a href="https://twinaro.com/" target="_blank" class="btn btn-visit">Visit Store</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card text-center">
-                <img src="https://via.placeholder.com/400x250?text=glowyshop" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="fw-bold">glowyshop</h5>
-                    <p class="text-muted small">متجر حقائب</p>
-                    <a href="https://glowyshop.myeasyorders.com/#" target="_blank" class="btn btn-visit">Visit Store</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card text-center">
-                <img src="https://via.placeholder.com/400x250?text=livoraa" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="fw-bold">livoraa</h5>
-                    <p class="text-muted small">متجر متعدد</p>
-                    <a href="https://livoraa.myeasyorders.com/" target="_blank" class="btn btn-visit">Visit Store</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card text-center">
-                <img src="https://via.placeholder.com/400x250?text=forsety" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="fw-bold">forsety</h5>
-                    <p class="text-muted small">متجر متعدد</p>
-                    <a href="https://forsety.myeasyorders.com/" target="_blank" class="btn btn-visit">Visit Store</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card text-center">
-                <img src="https://via.placeholder.com/400x250?text=d-nine" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="fw-bold">d-nine</h5>
-                    <p class="text-muted small">متجر احذية رياضية</p>
-                    <a href="https://d-nine.myeasyorders.com/" target="_blank" class="btn btn-visit">Visit Store</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card text-center">
-                <img src="https://via.placeholder.com/400x250?text=gomaa-store" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="fw-bold">gomaa-store</h5>
-                    <p class="text-muted small">متجر متعدد</p>
-                    <a href="https://gomaa-store.myeasyorders.com/" target="_blank" class="btn btn-visit">Visit Store</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card text-center">
-                <img src="https://via.placeholder.com/400x250?text=drrei-agri" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="fw-bold">drrei-agri</h5>
-                    <p class="text-muted small">متجر منتجات زراعية</p>
-                    <a href="https://www.drrei-agri.com/" target="_blank" class="btn btn-visit">Visit Store</a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<a href="https://wa.me/201005319339" class="whatsapp-btn" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="38">
-</a>
-
-</body>
-</html>
+                <div class="col-md-4">
+            <div class="card text-center">
+                <img src="https://via.placeholder.com/400x250?text=twinaro" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="fw-bold">twinaro</h5>
+                    <p class="text-muted small">متجر ملابس</p>
