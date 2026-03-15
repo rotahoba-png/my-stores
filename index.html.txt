@@ -44,9 +44,9 @@
                 <div class="card h-100">
                     <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="متجر">
                     <div class="card-body text-center">
-                        <h5 class="fw-bold">اسم المتجر الثاني</h5>
-                        <p class="text-muted small">وصف سريع للمتجر (مثلاً: متجر مستحضرات تجميل)</p>
-                        <a href="ضع_رابط_المتجر_هنا" target="_blank" class="btn btn-primary">زيارة المتجر</a>
+                        <h5 class="fw-bold">glowyshop</h5>
+                        <p class="text-muted small">متجر حقائب </p>
+                        <a href="https://glowyshop.myeasyorders.com/#" target="_blank" class="btn btn-primary">زيارة المتجر</a>
                     </div>
                 </div>
             </div>
