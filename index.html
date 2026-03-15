@@ -8,55 +8,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { --gold: #d4af37; --dark: #000000; }
-        body { background-color: #f8f8f8; font-family: 'Cairo', sans-serif; margin: 0; padding-bottom: 50px; }
+        body { background-color: #f8f8f8; font-family: 'Cairo', sans-serif; margin: 0; padding-bottom: 50px; overflow-x: hidden; }
         
-        /* البانر الفخم */
+        /* البانر مع حركة الظهور التدريجي */
         .luxury-hero {
-            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
-            padding: 100px 0;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+            padding: 120px 0;
             text-align: center;
             border-bottom: 4px solid var(--gold);
             margin-bottom: 60px;
+            animation: fadeInHero 1.2s ease-in-out;
         }
 
-        /* الاسم 3D مع حركة ثابتة */
+        /* الاسم 3D مع حركة الصعود */
         .brand-name {
             font-family: 'Montserrat', sans-serif;
-            font-size: calc(2rem + 3vw);
+            font-size: calc(2.5rem + 3vw);
             color: #fff;
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             margin: 0;
             text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 10px 20px rgba(0,0,0,0.5);
+            animation: slideUp 1s ease-out;
         }
 
         .gold-word { color: var(--gold); }
-        .subtitle { color: #888; letter-spacing: 2px; margin-top: 10px; font-weight: bold; }
+        .subtitle { color: #888; letter-spacing: 2px; margin-top: 15px; font-weight: bold; animation: fadeIn 2s; }
 
-        /* الكروت والظلال */
+        /* الكروت والظلال الاحترافية */
         .card {
             border: none;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            transition: 0.4s ease;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
             height: 100%;
             background: #fff;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
         }
-        .card:hover { transform: translateY(-12px); box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2); }
-        .card-img-top { height: 200px; object-fit: cover; background: #222; width: 100%; }
+        .card:hover { 
+            transform: translateY(-15px); 
+            box-shadow: 0 25px 50px rgba(212, 175, 55, 0.3); 
+        }
+        .card-img-top { height: 220px; object-fit: cover; background: #1a1a1a; }
         
-        .card-body { flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-
-        /* الأزرار الذهبية */
         .btn-gold {
             background: var(--dark);
             color: var(--gold);
             border: 1px solid var(--gold);
             border-radius: 30px;
-            padding: 10px 25px;
+            padding: 12px 30px;
             font-weight: bold;
             transition: 0.3s;
             text-decoration: none;
@@ -64,7 +64,12 @@
         }
         .btn-gold:hover { background: var(--gold); color: #000; }
 
-        .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+        /* الأنيميشن */
+        @keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInHero { from { opacity: 0; } to { opacity: 1; } }
+
+        .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
     </style>
 </head>
 <body>
@@ -75,101 +80,41 @@
 </div>
 
 <div class="container">
-    <div class="row g-4">
+    <div class="row g-5">
         
-        <div class="col-md-4">
-            <div class="card text-center">
-                <img src="https://via.placeholder.com/400x250/1a1a1a/d4af37?text=apexluxcare" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="fw-bold">apexluxcare</h5>
-                    <p class="text-muted small">متجر معجون اسنان صحى</p>
-                    <a href="https://apexluxcare.com/" target="_blank" class="btn btn-gold">VISIT STORE</a>
-                </div>
-            </div>
-        </div>
+        <script>
+            const stores = [
+                {n: "apexluxcare", d: "متجر معجون اسنان صحى", l: "https://apexluxcare.com/"},
+                {n: "twinaro", d: "متجر ملابس", l: "https://twinaro.com/"},
+                {n: "glowyshop", d: "متجر حقائب", l: "https://glowyshop.myeasyorders.com/#"},
+                {n: "livoraa", d: "متجر متعدد", l: "https://livoraa.myeasyorders.com/"},
+                {n: "forsety", d: "متجر متعدد", l: "https://forsety.myeasyorders.com/"},
+                {n: "d-nine", d: "متجر احذية رياضية", l: "https://d-nine.myeasyorders.com/"},
+                {n: "gomaa-store", d: "متجر متعدد", l: "https://gomaa-store.myeasyorders.com/"},
+                {n: "drrei-agri", d: "متجر منتجات زراعية", l: "https://www.drrei-agri.com/"}
+            ];
 
-        <div class="col-md-4">
-            <div class="card text-center">
-                <img src="https://via.placeholder.com/400x250/1a1a1a/d4af37?text=twinaro" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="fw-bold">twinaro</h5>
-                    <p class="text-muted small">متجر ملابس</p>
-                    <a href="https://twinaro.com/" target="_blank" class="btn btn-gold">VISIT STORE</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card text-center">
-                <img src="https://via.placeholder.com/400x250/1a1a1a/d4af37?text=glowyshop" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="fw-bold">glowyshop</h5>
-                    <p class="text-muted small">متجر حقائب</p>
-                    <a href="https://glowyshop.myeasyorders.com/#" target="_blank" class="btn btn-gold">VISIT STORE</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card text-center">
-                <img src="https://via.placeholder.com/400x250/1a1a1a/d4af37?text=livoraa" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="fw-bold">livoraa</h5>
-                    <p class="text-muted small">متجر متعدد</p>
-                    <a href="https://livoraa.myeasyorders.com/" target="_blank" class="btn btn-gold">VISIT STORE</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card text-center">
-                <img src="https://via.placeholder.com/400x250/1a1a1a/d4af37?text=forsety" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="fw-bold">forsety</h5>
-                    <p class="text-muted small">متجر متعدد</p>
-                    <a href="https://forsety.myeasyorders.com/" target="_blank" class="btn btn-gold">VISIT STORE</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card text-center">
-                <img src="https://via.placeholder.com/400x250/1a1a1a/d4af37?text=d-nine" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="fw-bold">d-nine</h5>
-                    <p class="text-muted small">متجر احذية رياضية</p>
-                    <a href="https://d-nine.myeasyorders.com/" target="_blank" class="btn btn-gold">VISIT STORE</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card text-center">
-                <img src="https://via.placeholder.com/400x250/1a1a1a/d4af37?text=gomaa-store" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="fw-bold">gomaa-store</h5>
-                    <p class="text-muted small">متجر متعدد</p>
-                    <a href="https://gomaa-store.myeasyorders.com/" target="_blank" class="btn btn-gold">VISIT STORE</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card text-center">
-                <img src="https://via.placeholder.com/400x250/1a1a1a/d4af37?text=drrei-agri" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="fw-bold">drrei-agri</h5>
-                    <p class="text-muted small">متجر منتجات زراعية</p>
-                    <a href="https://www.drrei-agri.com/" target="_blank" class="btn btn-gold">VISIT STORE</a>
-                </div>
-            </div>
-        </div>
+            stores.forEach(s => {
+                document.write(`
+                    <div class="col-md-4">
+                        <div class="card text-center">
+                            <img src="https://via.placeholder.com/400x250/1a1a1a/d4af37?text=${s.n}" class="card-img-top">
+                            <div class="card-body py-4">
+                                <h5 class="fw-bold">${s.n}</h5>
+                                <p class="text-muted small">${s.d}</p>
+                                <a href="${s.l}" target="_blank" class="btn btn-gold">VISIT STORE</a>
+                            </div>
+                        </div>
+                    </div>
+                `);
+            });
+        </script>
 
     </div>
 </div>
 
 <a href="https://wa.me/201005319339" class="whatsapp-btn" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="38">
 </a>
 
 </body>
