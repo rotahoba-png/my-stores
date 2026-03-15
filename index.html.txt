@@ -63,6 +63,16 @@
         </div>
     </div>
 </div>
+<div class="col-md-4">
+    <div class="card h-100">
+        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="متجر">
+        <div class="card-body text-center">
+            <h5 class="fw-bold">forsety</h5>
+            <p class="text-muted small">متجر متعدد</p>
+            <a href="https://forsety.myeasyorders.com/" target="_blank" class="btn btn-primary">زيارة المتجر</a>
+        </div>
+    </div>
+</div>
 
     <a href="https://wa.me/201005319339" class="whatsapp-btn" target="_blank">
         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
