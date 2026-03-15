@@ -10,7 +10,6 @@
         :root { --gold: #c5a059; --dark: #000000; }
         body { background-color: #fcfcfc; font-family: 'Cairo', sans-serif; margin: 0; overflow-x: hidden; }
         
-        /* البانر العلوي */
         .luxury-hero {
             background: #000;
             background-image: radial-gradient(circle at top right, #1a1a1a, #000);
@@ -32,7 +31,6 @@
         .gold-word { color: var(--gold); font-style: italic; font-weight: 300; }
         .subtitle { font-family: 'Montserrat', sans-serif; color: rgba(255,255,255,0.6); letter-spacing: 5px; text-transform: uppercase; font-size: 0.8rem; margin-top: 20px; opacity: 0; animation: fadeIn 2.5s forwards 0.5s; }
 
-        /* تنسيق الصور والكروت الموحد */
         .card {
             border: none;
             border-radius: 0;
@@ -47,10 +45,9 @@
             box-shadow: 0 30px 60px rgba(0,0,0,0.1);
         }
 
-        /* الجزء المسؤول عن توحيد مقاس الصور */
         .img-container {
             width: 100%;
-            height: 250px; /* طول موحد لجميع المربعات */
+            height: 250px; 
             overflow: hidden;
             background: #f0f0f0;
         }
@@ -58,8 +55,8 @@
         .card-img-top {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* لضمان ملء المساحة بدون مط الصورة */
-            object-position: top; /* التركيز على الجزء العلوي من صورة المتجر */
+            object-fit: cover; 
+            object-position: center; 
             transition: transform 0.8s ease;
         }
 
@@ -100,14 +97,14 @@
         
         <script>
             const stores = [
-                {n: "APEXLUXCARE", d: "متجر معجون اسنان صحى", l: "https://apexluxcare.com/", img: "shop1.jpg.jpg"},
-                {n: "TWINARO", d: "متجر ملابس", l: "https://twinaro.com/", img: "shop2.jpg.jpg"},
-                {n: "GLOWYSHOP", d: "متجر حقائب", l: "https://glowyshop.myeasyorders.com/#", img: "shop3.jpg.jpg"},
-                {n: "LIVORAA", d: "متجر متعدد", l: "https://livoraa.myeasyorders.com/", img: "shop4.jpg.jpg"},
-                {n: "FORSETY", d: "متجر متعدد", l: "https://forsety.myeasyorders.com/", img: "shop5.jpg.jpg"},
-                {n: "D-NINE", d: "متجر احذية رياضية", l: "https://d-nine.myeasyorders.com/", img: "shop6.jpg.jpg"},
-                {n: "GOMAA-STORE", d: "متجر متعدد", l: "https://gomaa-store.myeasyorders.com/", img: "shop7.jpg.jpg"},
-                {n: "DRREI-AGRI", d: "متجر منتجات زراعية", l: "https://www.drrei-agri.com/", img: "shop8.jpg.jpg"}
+                {n: "TWINARO", d: "متجر ملابس", l: "https://twinaro.com/", img: "shop1.jpg.jpg"},
+                {n: "LIVORAA", d: "متجر متعدد", l: "https://livoraa.myeasyorders.com/", img: "shop2.jpg.jpg"},
+                {n: "APEXLUXCARE", d: "متجر معجون اسنان صحى", l: "https://apexluxcare.com/", img: "shop3.jpg.jpg"},
+                {n: "FORSETY", d: "متجر متعدد", l: "https://forsety.myeasyorders.com/", img: "shop4.jpg.jpg"},
+                {n: "D-NINE", d: "متجر احذية رياضية", l: "https://d-nine.myeasyorders.com/", img: "shop5.jpg.jpg"},
+                {n: "GOMAA-STORE", d: "متجر متعدد", l: "https://gomaa-store.myeasyorders.com/", img: "shop6.jpg.jpg"},
+                {n: "DRREI-AGRI", d: "متجر منتجات زراعية", l: "https://www.drrei-agri.com/", img: "shop7.jpg.jpg"},
+                {n: "GLOWYSHOP", d: "متجر حقائب", l: "https://glowyshop.myeasyorders.com/#", img: "shop8.jpg.jpg"}
             ];
 
             stores.forEach(s => {
